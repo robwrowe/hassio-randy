@@ -1,0 +1,3 @@
+# ADDS GROUPS TO CONFIG YAML
+kitchen:
+  name: Kitchen
