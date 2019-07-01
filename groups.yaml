@@ -1,3 +1,14 @@
 # ADDS GROUPS TO CONFIG YAML
 kitchen:
   name: Kitchen
+  entities:
+    - media_player.kitchen_display
+ 
+dining_room:
+  name: Dining Room
+  entities:
+    - light.dining_room_1
+    - light.dining_room_2
+    - light.dining_room_3
+    - light.dining_room_4
+    - light.dining_room_5

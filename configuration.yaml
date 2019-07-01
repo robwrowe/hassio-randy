@@ -22,11 +22,36 @@ script: !include scripts.yaml
 discovery:
   ignore:
     - philips_hue
-  enable:
-    - homekit
 
 # FRONT DOOR LOCKED
 august:
   login_method: phone
   username: !secret august_user
-  password: !secret august_password
+  password: !secret august_pass
+  
+# BLINK CAMERAS
+blink:
+  username: !secret blink_user
+  password: !secret blink_pass
+  scan_interval: 300
+  binary_sensors:
+    monitored_conditions:
+      - motion_enabled
+      - motion_detected
+  sensors:
+    monitored_conditions:
+      - battery
+      - temperature
+      - wifi_strength
+
+# DUCK DNS
+duckdns:
+  domain: 4612barbados
+  access_token: !secret duckdns_key
+  
+http:
+  base_url: https://4612barbados.duckdns.org
+#  ssl_certificate: /data/letsencrypt/live/4612barbados.duckdns.org/fullchain.pem
+#  ssl_key: /data/letsencrypt/live/4612barbados.duckdns.org/privkey.pem
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
