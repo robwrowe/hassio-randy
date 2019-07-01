@@ -22,12 +22,6 @@ script: !include scripts.yaml
 discovery:
   ignore:
     - philips_hue
-
-# FRONT DOOR LOCKED
-august:
-  login_method: phone
-  username: !secret august_user
-  password: !secret august_pass
   
 # BLINK CAMERAS
 blink:
